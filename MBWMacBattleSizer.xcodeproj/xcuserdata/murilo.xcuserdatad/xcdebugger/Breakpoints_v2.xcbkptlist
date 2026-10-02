@@ -14,8 +14,8 @@
             filePath = "MBWMacBattleSizer/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "saveAndExit(battleSize:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "MBWMacBattleSizer/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "saveAndExit(battleSize:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -46,25 +46,9 @@
             filePath = "MBWMacBattleSizer/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "saveAndExit(battleSize:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3040C8BF-5C00-497E-95C2-A0029696C0B8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MBWMacBattleSizer/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getGameVersion()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

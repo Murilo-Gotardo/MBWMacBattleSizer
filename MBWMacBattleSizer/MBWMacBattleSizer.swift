@@ -4,7 +4,7 @@ import SwiftUI
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(width: 430, height: 200)
+                .frame(width: 450, height: 200)
         }
         .windowResizability(.contentSize)
     }

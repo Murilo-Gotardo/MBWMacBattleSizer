@@ -1,55 +1,104 @@
 import SwiftUI
-import Playgrounds
 internal import UniformTypeIdentifiers
 
 let home = String(cString: getpwuid(getuid()).pointee.pw_dir)
 
 struct ContentView: View {
-    @State private var battleSizeValue: Double = 100
+    @State private var battleSizeValue: Double = 2
+    @State private var gameVersion = "..."
+    
+    private var trackColor: Color {
+        switch battleSizeValue {
+            case ..<20: return .green
+            case ..<500: return .yellow
+            default: return .red
+        }
+    }
 
     var body: some View {
         VStack(){
-            GroupBox("Battle Size") {
+            GroupBox {
                 VStack(spacing: 16) {
-                        Slider(value: $battleSizeValue, in: 2...1000, step: 1)
-                        Text("Valor: \(Int(battleSizeValue))")
+                        Slider(value: $battleSizeValue, in: 1...998) {
+                            
+                        } minimumValueLabel: {
+                            Text("1")
+                        } maximumValueLabel: {
+                            Text("998")
+                        }
+                        .tint(trackColor)
+                    
+                        HStack(spacing: 4) {
+                            Text("Current battle size:")
+                            TextField("", value: $battleSizeValue, format: .number.precision(.fractionLength(0)))
+                                .textFieldStyle(.roundedBorder)
+                                .frame(width: 70)
+                                .multilineTextAlignment(.trailing)
+                                .focusable(false)
+                            Spacer()
+                            Text("Real game value: \(realBattleSizeInGame(battleSizeValue))")
+                        }
                     }
                     .padding()
-                
-            }.padding()
+            } label: {
+                Text("Battle Size")
+                    .font(.system(size: 14, weight: .semibold))
+            }
+            .padding()
             
-            HStack(alignment: .bottom) {
-                Text( "M&B version: \(getGameVersion())")
+            HStack() {
+                Text("Warning: values above 1000 in **Real game value** can cause game crashes and/or bad performance")
+                    .foregroundStyle(.red)
+                    .font(.system(size: 7))
                 Spacer()
-                Button("Save and exit"){
-                    saveAndExit(battleSize: $battleSizeValue.wrappedValue)
+            }
+            .padding(Edge.Set.horizontal)
+            
+            HStack(alignment: .center) {
+                Text("M&B version: \(gameVersion)")
+                Spacer()
+                Button("Save and exit") {
+                    saveAndExit(battleSize: battleSizeValue)
                 }
                 Button("exit"){
-                    exit()
+                    quitApp()
                 }
-            }.padding()
+            }
+            .padding()
         }
-        
+        .task {
+            if let n = Double(getValueFromGameFiles(
+                pathToFile: "Library/Application Support/MBWarband/rgl_config.txt",
+                regex: #"battle_size = (\d+\.\d{4})"#
+            )) {
+                battleSizeValue = n
+            }
+            
+            gameVersion = getValueFromGameFiles(pathToFile: "Library/Application Support/Steam/steamapps/common/MountBlade Warband/Mount and Blade.app/Contents/Resources/rgl_log.txt", regex: #"Version:\s+(\d+\.\d+)"#)
+        }
     }
 }
 
-func getGameVersion() -> String {
+func realBattleSizeInGame(_ battleSize: Double) -> Int {
+    let n = min(Int(battleSize.rounded()), 998)
+    return 120 * n + 30
+}
+
+func getValueFromGameFiles(pathToFile: String, regex: String) -> String {
     let url = URL(fileURLWithPath: home)
-        .appendingPathComponent("Library/Application Support/Steam/steamapps/common/MountBlade Warband/Mount and Blade.app/Contents/Resources/rgl_log.txt")
+        .appendingPathComponent(pathToFile)
     
     do {
-        let conteudo = try String(contentsOf: url, encoding: .utf8)
+        let content = try String(contentsOf: url, encoding: .utf8)
         
-        guard conteudo.contains("Version:") else { return "Version not found" }
+        let regex = try NSRegularExpression(pattern: regex, options: [.caseInsensitive])
         
-        let regex = try! NSRegularExpression(pattern: #"Version:\s+(\d+\.\d+)"#, options: [.caseInsensitive])
-        
-        let range = NSRange(conteudo.startIndex..., in: conteudo)
+        let range = NSRange(content.startIndex..., in: content)
 
-        guard let match = regex.firstMatch(in: conteudo, options: [], range: range),
-        let faixa = Range(match.range(at: 1), in: conteudo) else { return "" }
+        guard let match = regex.firstMatch(in: content, options: [], range: range),
+        let faixa = Range(match.range(at: 1), in: content) else { return "" }
 
-        return String(conteudo[faixa])
+        return String(content[faixa])
     } catch {
         print("Error: \(error)")
     }
@@ -70,13 +119,13 @@ func saveAndExit(battleSize: Double) -> Void {
         fileContent.replace(regex, with: "battle_size = \(Int(battleSize))")
         try fileContent.write(to: url, atomically: false, encoding: .utf8)
     } catch {
-        print("Erro: \(error)")
+        print("Error: \(error)")
     }
     
-    exit()
+    quitApp()
 }
 
-func exit() {
+func quitApp() {
     NSApplication.shared.terminate(nil)
 }
 
