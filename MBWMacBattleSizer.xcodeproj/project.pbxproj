@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* M&B W Mac battle Sizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M&B W Mac battle Sizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* M&B W Mac battle sizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M&B W Mac battle sizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62FF7126306EBA8B0019FB01 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +44,7 @@
 		000000000000000000000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000120 /* M&B W Mac battle Sizer.app */,
+				000000000000000000000120 /* M&B W Mac battle sizer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			);
 			name = MBWMacBattleSizer;
 			productName = MyApp;
-			productReference = 000000000000000000000120 /* M&B W Mac battle Sizer.app */;
+			productReference = 000000000000000000000120 /* M&B W Mac battle sizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "M&B W Mac battle Sizer";
+				INFOPLIST_KEY_CFBundleDisplayName = "M&B W Mac battle sizer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -281,9 +281,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.murilogotardopommereningpersonalteam.MBWMacBattleSizer;
-				PRODUCT_NAME = "M&B W Mac battle Sizer";
+				PRODUCT_NAME = "M&B W Mac battle sizer";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -309,7 +309,7 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "M&B W Mac battle Sizer";
+				INFOPLIST_KEY_CFBundleDisplayName = "M&B W Mac battle sizer";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -324,9 +324,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.murilogotardopommereningpersonalteam.MBWMacBattleSizer;
-				PRODUCT_NAME = "M&B W Mac battle Sizer";
+				PRODUCT_NAME = "M&B W Mac battle sizer";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
