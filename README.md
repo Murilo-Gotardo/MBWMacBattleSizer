@@ -1,4 +1,4 @@
-## # Mac Battle Sizer for Mount & Blade: Warband
+# Mac Battle Sizer for Mount & Blade: Warband
 
 A small macOS app that lets you go beyond the default battle size limit in Mount & Blade: Warband. It works by editing the game's configuration file (`rgl_config.txt`).
 
