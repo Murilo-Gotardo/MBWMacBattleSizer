@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624C86733070802400E5CA23 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 624C86723070801D00E5CA23 /* README.md */; };
 		62FF7127306EBA970019FB01 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62FF7126306EBA8B0019FB01 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* M&B W Mac battle sizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M&B W Mac battle sizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		624C86723070801D00E5CA23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62FF7126306EBA8B0019FB01 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				000000000000000000000010 /* MBWMacBattleSizer */,
+				624C86723070801D00E5CA23 /* README.md */,
 				62FF7126306EBA8B0019FB01 /* .gitignore */,
 				000000000000000000000020 /* Products */,
 			);
@@ -108,6 +111,7 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				624C86733070802400E5CA23 /* README.md in Resources */,
 				62FF7127306EBA970019FB01 /* .gitignore in Resources */,
 			);
 		};
