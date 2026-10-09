@@ -1,3 +1,6 @@
+<a href="https://www.moddb.com/mods/mbwmacbattlesizer" title="View MBWMacBattleSizer on ModDB" target="_blank"><img src="https://button.moddb.com/popularity/medium/mods/73347.png" alt="MBWMacBattleSizer" /></a>
+<a href="https://www.moddb.com/mods/mbwmacbattlesizer/downloads/mbwmacbattlesizer" title="Download MBWMacBattleSizer - ModDB" target="_blank"><img src="https://button.moddb.com/download/medium/318121.png" alt="MBWMacBattleSizer" /></a>
+
 # Mac Battle Sizer for Mount & Blade: Warband
 
 A small macOS app that lets you go beyond the default battle size limit in Mount & Blade: Warband. It works by editing the game's configuration file (`rgl_config.txt`).
